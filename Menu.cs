@@ -8,13 +8,13 @@ namespace CarritoCompras
 {
     class Menu
     {
-        Operaciones myOperation = new Operaciones(0, 0);
+        Operaciones myOperation = new Operaciones(0, 0, 0);
 
         public void menu()
         {
             int opcion;
             bool salida = false;
-
+            
             do
             {
                 Console.WriteLine("SHOPPING ONLINE DE CAMISAS - Ventas minoristas y mayoristas");
@@ -24,7 +24,7 @@ namespace CarritoCompras
                 Console.WriteLine("2- Eliminar camisa del carro de compras");
                 Console.WriteLine("3- Salir");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("         -Cantidad de camisas en el carro de compras:");
+                Console.WriteLine("         -Cantidad de camisas en el carro de compras:"+ myOperation.getContador());
                 Console.WriteLine("         -Precio unitario: 1000");
                 Console.WriteLine("         -Precio total sin descuento: " + myOperation.getTotal());
                 if (myOperation.getTotal() >= 3000 && myOperation.getTotal() <= 5000)
@@ -47,6 +47,7 @@ namespace CarritoCompras
                     case 1:
                         myOperation.setTotal(1000);
                         myOperation.setDescuento(1000);
+                        myOperation.setContador(1);
                         if (myOperation.getTotal() == 3000)
                         {
                             myOperation.calcularDescuento(1000.0 * 0.15);
