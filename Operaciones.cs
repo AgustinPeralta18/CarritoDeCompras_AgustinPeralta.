@@ -11,12 +11,14 @@ namespace CarritoCompras
         private double total;
         private double totalDescuento;
         private int contador;
+        private bool salida;
 
-        public Operaciones(double total, double totalDescuento,int contador)
+        public Operaciones(double total, double totalDescuento,int contador, bool salida)
         {
             this.total = total;
             this.totalDescuento = totalDescuento;
             this.contador = contador;
+            this.salida = salida;
         }
 
 
@@ -48,11 +50,21 @@ namespace CarritoCompras
         {
             return this.contador;
         }
+        public void setBool(bool salida)
+        {
+            this.salida = salida;
+        }
+
+        public bool getSalida()
+        {
+            return this.salida;
+        }
 
         public void calcularDescuento(double descuento)
         {
             this.totalDescuento -= descuento;
         }
+
 
         
     }

@@ -16,7 +16,7 @@ namespace CarritoCompras
              */
 
 
-            Menu myMenu = new Menu();
+            MenuOpciones myMenu = new MenuOpciones();
 
             myMenu.menu();
             Console.ReadKey();
